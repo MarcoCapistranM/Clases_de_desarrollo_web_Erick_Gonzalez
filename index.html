@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina web</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Hola</h1>
+      <h1 class="title">Hello</h1>
+
+      <h2 class="title">Hola como estas</h2>
+
+      <h2 id="title">Hola como estas</h2>
+
+      <p id="paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam
+        iure eaque nobis delectus blanditiis reiciendis cupiditate vero
+        perferendis eum itaque labore neque nemo voluptas, modi omnis eligendi
+        sunt dignissimos.
+      </p>
+
+      <!-- Selectores avanzados -->
+      <ul id="lista_desordenada">
+        <li class="elem">Elemento 1</li>
+        <li class="elem">Elemento 2</li>
+        <li class="elem">Elemento 3</li>
+      </ul>
+
+      <p>Primero parrafo</p>
+      <p>Segundo parrafo</p>
+      <p>Tercer parrafo</p>
+
+      <!-- Pseudoclases --->
+
+      <input id="caja_1" type="text" placeholder="Escribe algo" />
+      <ul>
+        <li>Uno</li>
+        <li class="importante">Dos</li>
+        <li>Tres</li>
+      </ul>
+    </div>
+
+    <!-- Pseudoelementos --->
+    <div>
+      <p class="decorado">buenas tardes, como va tu dia</p>
+      <input id="caja_2" type="text" placeholder="Coloca tu nombre" />
+      <div class="spanForThisSquare"></div>
+    </div>
+
+    <!--  Box Model y box-sizing --->
+    <div class="box">Caja</div>
+
+    <!--  Posicionamiento + z-index --->
+    <div class="fijo">Contenedor fijo</div>
+    <div class="relatives">Contenedor relativo</div>
+
+    <!--  Display y visibilidad --->
+    <p class="oculto">Este no se va a ver por nada del mundo</p>
+    <p class="invisible">Este ocupa un espacio pero no se ve</p>
+
+    <!--  Flexbox --->
+    <div class="contenedor">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">4</div>
+    </div>
+
+    <!-- Grid -->
+    <!-- <div class="grid-contenedor">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+    </div> -->
+
+    <!-- Responsive con media queries -->
+    <div class="grid-contenedor">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+    </div>
+
+    <!-- Unidades viewport + clamp() -->
+    <h2 class="text-clamp">Texto con tamano adaptable</h2>
+
+    <!-- Transiciones y animaciones -->
+    <button class="btn-transition-1">Pasa el mouse por aqui</button>
+    <button class="btn-transition-2">Pasa el mouse por aqui</button>
+    <button class="btn-transition-3">Pasa el mouse por aqui</button>
+    <button class="btn-transition-4">Pasa el mouse por aqui</button>
+
+    <!-- Variables en CSS -->
+    <h3 class="titulo-root">Hola esta es una variable</h3>
+
+    <!-- Dark Mode con prefers-color-scheme -->
+
+
+
+  </body>
+</html>

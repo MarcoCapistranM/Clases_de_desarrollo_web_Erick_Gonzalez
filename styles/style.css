@@ -1,0 +1,357 @@
+:root {
+  --color-titulo: rgb(255, 255, 255);
+  --tamano-de-fuente: 5rem;
+  --background-titulo: brown;
+  --background: white;
+}
+
+html.dark {
+  --color-titulo: rgb(199, 87, 169);
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Semantica de ettiqueta */
+body {
+  background-color: #1b1b1b;
+}
+
+div {
+  border: 2px solid blue;
+  background-color: slateblue;
+  height: 100%;
+}
+
+h1 {
+  color: var(--color-titulo);
+}
+
+/* Por tipo de clase */
+.title {
+  color: yellow;
+}
+
+/* Por tipo de id */
+#title {
+  color: brown;
+}
+
+/* Hexadecimal #fff */
+/* RGB: rgb(255,255,255) */
+/* RGBA: rgba(255, 255, 255, 1); */
+
+#paragraph {
+  font-size: 5px;
+  color: var(--color-titulo);
+}
+
+/* Unidades Absolutas px cm mm in */
+
+/* Unidades relativas % rem em */
+
+/* Unidades viewport vh vmax vw */
+
+/* Selectores avanzados */
+
+/* ul a li -> Todos los li dentro de ul */
+
+#lista_desordenada,
+.elem {
+  color: orangered;
+}
+
+/* p + p -> parrafo que viene justo despues de otro */
+p + p {
+  color: salmon;
+}
+
+/* p ~ p -> Todos los parrafos hermanos o siguientes
+se pongan del mismo estilo */
+
+p ~ p {
+  font-weight: 700;
+}
+
+/* Pseudoclases  */
+
+/* focus -> cuando haces click o escribes */
+#caja_1:focus {
+  border: 4px solid hsl(0, 55%, 54%);
+}
+
+/* :nth-child() -> seleccionar al segundo hijo */
+li:nth-child(2) {
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgb(15, 73, 96) 0%,
+    rgb(33, 118, 127) 25%,
+    rgb(67, 175, 173) 50%,
+    rgb(153, 234, 218) 75%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+/* :not() -> todo lo que NO sea el 2do elemento */
+li:not(:nth-child(2)) {
+  font-weight: 100;
+}
+
+/* #caja_1:focus:not(:nth-child(1)) {
+  border: none;
+} */
+
+/* :hover -> i te posicionas sobre el elemento cambia */
+.importante:hover {
+  transition: ease-in 3s;
+  transform: skew(30deg);
+}
+
+/* Pseudoelementos  */
+
+.decorado::before {
+  content: 'Hola ';
+}
+
+.decorado::after {
+  content: ' Marco';
+}
+
+#caja_2::placeholder {
+  color: #fd0000;
+  font-style: italic;
+}
+
+.spanForThisSquare {
+  position: relative;
+  background-color: yellow;
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
+  border: none;
+}
+
+.spanForThisSquare::before,
+.spanForThisSquare::after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 68, 0, 0.907);
+  right: 1;
+  top: 1;
+  transition: all 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+.spanForThisSquare:hover::before {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transform: rotate(30deg);
+}
+
+.spanForThisSquare:hover::after {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transform: rotate(60deg);
+}
+
+/* Box Model y box-sizing  */
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  background-color: pink;
+}
+
+/* Posicionamiento + z-index  */
+.fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: white;
+  width: 40%;
+  height: 20%;
+  padding: 10px;
+  z-index: 40;
+}
+
+.relatives {
+  position: relative;
+  background-color: #890f0fa1;
+  color: white;
+  width: 40%;
+  padding: 10px;
+  z-index: 30;
+}
+
+/* Display y visibilidad  */
+.oculto {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Flexbox  */
+.contenedor {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.caja {
+  background-color: lightblue;
+  flex: 1 1 200px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  height: auto;
+}
+
+/* Grid  */
+.grid-contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: yellowgreen;
+  color: white;
+  padding: 16px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Responsive con media queries  */
+@media (max-width: 400px) {
+  .grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .grid-item {
+    background-color: #2a7b9b;
+    color: white;
+    padding: 16px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 200px) {
+  .grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Unidades viewport + clamp()  */
+.text-clamp {
+  color: white;
+  font-size: clamp(0.7rem, 5vw, 1rem);
+}
+
+/*
+ * 1rem = 16px
+ */
+
+/* Transiciones y animaciones  */
+.btn-transition-1 {
+  background-color: teal;
+  color: white;
+  padding: 1rem;
+  border: none;
+  transition: background-color 0.5s ease-in-out all;
+  animation-name: animationButton;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* animation: animationButton 0.5s infinite ease-in-out; */
+}
+
+.btn-transition-2 {
+  background-color: teal;
+  color: white;
+  padding: 1rem;
+  border: none;
+  transition: background-color 0.5s ease-in;
+}
+
+.btn-transition-3 {
+  background-color: teal;
+  color: white;
+  padding: 1rem;
+  border: none;
+  transition: background-color 0.5s ease-out;
+}
+
+.btn-transition-4 {
+  background-color: teal;
+  color: white;
+  padding: 1rem;
+  border: none;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn-transition-1:hover,
+.btn-transition-2:hover,
+.btn-transition-3:hover,
+.btn-transition-4:hover {
+  background: tomato;
+}
+
+@keyframes animationButton {
+  0% {
+    background-color: orange;
+  }
+
+  25% {
+    background-color: orangered;
+  }
+
+  50% {
+    background-color: red;
+  }
+
+  75% {
+    background-color: greenyellow;
+  }
+
+  100% {
+    background-color: orange;
+  }
+}
+
+/* Variables en CSS  */
+.titulo-root {
+  color: var(--color-titulo);
+  font-size: var(--tamano-de-fuente);
+  background-color: var(--background-titulo);
+}
+
+/* Dark Mode con prefers-color-scheme */
